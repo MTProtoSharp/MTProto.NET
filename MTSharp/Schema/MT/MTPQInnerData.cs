@@ -1,4 +1,5 @@
 using MTSharp.Attributes;
+using Org.BouncyCastle.Math;
 
 namespace MTSharp.Schema.MT
 {
@@ -20,11 +21,11 @@ namespace MTSharp.Schema.MT
         [MTParameter(Order = 2)]
         public byte[] Q { get; set; }
         [MTParameter(Order = 3, BytesCount = 16)]
-        public byte[] Nonce { get; set; }
+        public BigInteger Nonce { get; set; }
         [MTParameter(Order = 4, BytesCount = 16)]
-        public byte[] ServerNonce { get; set; }
+        public BigInteger ServerNonce { get; set; }
         [MTParameter(Order = 5, BytesCount = 32)]
-        public byte[] NewNonce { get; set; }
+        public BigInteger NewNonce { get; set; }
 
 
     }
