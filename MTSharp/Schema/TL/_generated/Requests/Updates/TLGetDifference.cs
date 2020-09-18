@@ -23,11 +23,11 @@ namespace MTSharp.Schema.TL.Requests.Updates
             }
         }
 
-		[MTParameter(Order = 0)]
+		[MTParameter(Order = 0, IsFlag = true)]
 		public int Flags { get; set; }
 		[MTParameter(Order = 1)]
 		public int Pts { get; set; }
-		[MTParameter(Order = 2, FromFlag=0, FlagType= FlagType.Null)]
+		[MTParameter(Order = 2, FlagBitId=0, FlagType= FlagType.Null)]
 		public int? PtsTotalLimit { get; set; }
 		[MTParameter(Order = 3)]
 		public int Date { get; set; }

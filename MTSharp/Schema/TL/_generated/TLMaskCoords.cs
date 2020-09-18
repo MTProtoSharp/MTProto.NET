@@ -1,4 +1,14 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using MTSharp;
 using MTSharp.Attributes;
+using MTSharp.Enums;
+using MTSharp.Schema;
+using MTSharp.Schema.TL;
 
 namespace MTSharp.Schema.TL
 {
@@ -13,14 +23,14 @@ namespace MTSharp.Schema.TL
             }
         }
 
-        [MTParameter(Order = 0)]
-        public int N { get; set; }
-        [MTParameter(Order = 1)]
-        public double X { get; set; }
-        [MTParameter(Order = 2)]
-        public double Y { get; set; }
-        [MTParameter(Order = 3)]
-        public double Zoom { get; set; }
+		[MTParameter(Order = 0)]
+		public int N { get; set; }
+		[MTParameter(Order = 1)]
+		public double X { get; set; }
+		[MTParameter(Order = 2)]
+		public double Y { get; set; }
+		[MTParameter(Order = 3)]
+		public double Zoom { get; set; }
 
 
     }

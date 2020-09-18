@@ -1,5 +1,14 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using MTSharp;
 using MTSharp.Attributes;
 using MTSharp.Enums;
+using MTSharp.Schema;
+using MTSharp.Schema.TL;
 
 namespace MTSharp.Schema.TL.Requests.Channels
 {
@@ -14,20 +23,20 @@ namespace MTSharp.Schema.TL.Requests.Channels
             }
         }
 
-        [MTParameter(Order = 0)]
-        public int Flags { get; set; }
-        [MTParameter(Order = 1, FromFlag = 0, FlagType = FlagType.True)]
-        public bool Broadcast { get; set; }
-        [MTParameter(Order = 2, FromFlag = 1, FlagType = FlagType.True)]
-        public bool Megagroup { get; set; }
-        [MTParameter(Order = 3)]
-        public string Title { get; set; }
-        [MTParameter(Order = 4)]
-        public string About { get; set; }
-        [MTParameter(Order = 5, FromFlag = 2, FlagType = FlagType.Null)]
-        public TLAbsInputGeoPoint GeoPoint { get; set; }
-        [MTParameter(Order = 6, FromFlag = 2, FlagType = FlagType.Null)]
-        public string Address { get; set; }
+		[MTParameter(Order = 0, IsFlag = true)]
+		public int Flags { get; set; }
+		[MTParameter(Order = 1, FlagBitId=0, FlagType= FlagType.True)]
+		public bool Broadcast { get; set; }
+		[MTParameter(Order = 2, FlagBitId=1, FlagType= FlagType.True)]
+		public bool Megagroup { get; set; }
+		[MTParameter(Order = 3)]
+		public string Title { get; set; }
+		[MTParameter(Order = 4)]
+		public string About { get; set; }
+		[MTParameter(Order = 5, FlagBitId=2, FlagType= FlagType.Null)]
+		public TLAbsInputGeoPoint GeoPoint { get; set; }
+		[MTParameter(Order = 6, FlagBitId=2, FlagType= FlagType.Null)]
+		public string Address { get; set; }
 
 
     }

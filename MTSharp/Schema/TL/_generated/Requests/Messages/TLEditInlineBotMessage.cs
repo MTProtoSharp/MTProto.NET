@@ -23,19 +23,19 @@ namespace MTSharp.Schema.TL.Requests.Messages
             }
         }
 
-		[MTParameter(Order = 0)]
+		[MTParameter(Order = 0, IsFlag = true)]
 		public int Flags { get; set; }
-		[MTParameter(Order = 1, FromFlag=1, FlagType= FlagType.True)]
+		[MTParameter(Order = 1, FlagBitId=1, FlagType= FlagType.True)]
 		public bool NoWebpage { get; set; }
 		[MTParameter(Order = 2)]
 		public MTSharp.Schema.TL.TLInputBotInlineMessageID Id { get; set; }
-		[MTParameter(Order = 3, FromFlag=11, FlagType= FlagType.Null)]
+		[MTParameter(Order = 3, FlagBitId=11, FlagType= FlagType.Null)]
 		public string Message { get; set; }
-		[MTParameter(Order = 4, FromFlag=14, FlagType= FlagType.Null)]
+		[MTParameter(Order = 4, FlagBitId=14, FlagType= FlagType.Null)]
 		public TLAbsInputMedia Media { get; set; }
-		[MTParameter(Order = 5, FromFlag=2, FlagType= FlagType.Null)]
+		[MTParameter(Order = 5, FlagBitId=2, FlagType= FlagType.Null)]
 		public TLAbsReplyMarkup ReplyMarkup { get; set; }
-		[MTParameter(Order = 6, FromFlag=3, FlagType= FlagType.Null)]
+		[MTParameter(Order = 6, FlagBitId=3, FlagType= FlagType.Null)]
 		public TLVector<TLAbsMessageEntity> Entities { get; set; }
 
 

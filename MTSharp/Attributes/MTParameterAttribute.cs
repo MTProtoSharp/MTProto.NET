@@ -6,8 +6,9 @@ namespace MTSharp.Attributes
     public class MTParameterAttribute : Attribute
     {
         public int Order { get; set; }
-        public int FromFlag { get; set; } = -1;
-        public int BytesCount { get; set; } = -1;
+        public int FlagBitId { get; set; } = -1;
+        public int BigIntegerBytesCount { get; set; } = -1;
         public FlagType FlagType { get; set; }
+        public bool IsFlag { get; set; } = false;
     }
 }

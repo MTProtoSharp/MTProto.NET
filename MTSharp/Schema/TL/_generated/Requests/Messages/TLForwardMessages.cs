@@ -23,15 +23,15 @@ namespace MTSharp.Schema.TL.Requests.Messages
             }
         }
 
-		[MTParameter(Order = 0)]
+		[MTParameter(Order = 0, IsFlag = true)]
 		public int Flags { get; set; }
-		[MTParameter(Order = 1, FromFlag=5, FlagType= FlagType.True)]
+		[MTParameter(Order = 1, FlagBitId=5, FlagType= FlagType.True)]
 		public bool Silent { get; set; }
-		[MTParameter(Order = 2, FromFlag=6, FlagType= FlagType.True)]
+		[MTParameter(Order = 2, FlagBitId=6, FlagType= FlagType.True)]
 		public bool Background { get; set; }
-		[MTParameter(Order = 3, FromFlag=8, FlagType= FlagType.True)]
+		[MTParameter(Order = 3, FlagBitId=8, FlagType= FlagType.True)]
 		public bool WithMyScore { get; set; }
-		[MTParameter(Order = 4, FromFlag=9, FlagType= FlagType.True)]
+		[MTParameter(Order = 4, FlagBitId=9, FlagType= FlagType.True)]
 		public bool Grouped { get; set; }
 		[MTParameter(Order = 5)]
 		public TLAbsInputPeer FromPeer { get; set; }
@@ -41,7 +41,7 @@ namespace MTSharp.Schema.TL.Requests.Messages
 		public TLVector<long> RandomId { get; set; }
 		[MTParameter(Order = 8)]
 		public TLAbsInputPeer ToPeer { get; set; }
-		[MTParameter(Order = 9, FromFlag=10, FlagType= FlagType.Null)]
+		[MTParameter(Order = 9, FlagBitId=10, FlagType= FlagType.Null)]
 		public int? ScheduleDate { get; set; }
 
 

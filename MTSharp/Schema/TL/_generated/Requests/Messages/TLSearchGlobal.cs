@@ -23,9 +23,9 @@ namespace MTSharp.Schema.TL.Requests.Messages
             }
         }
 
-		[MTParameter(Order = 0)]
+		[MTParameter(Order = 0, IsFlag = true)]
 		public int Flags { get; set; }
-		[MTParameter(Order = 1, FromFlag=0, FlagType= FlagType.Null)]
+		[MTParameter(Order = 1, FlagBitId=0, FlagType= FlagType.Null)]
 		public int? FolderId { get; set; }
 		[MTParameter(Order = 2)]
 		public string Q { get; set; }

@@ -23,11 +23,11 @@ namespace MTSharp.Schema.TL.Requests.Messages
             }
         }
 
-		[MTParameter(Order = 0)]
+		[MTParameter(Order = 0, IsFlag = true)]
 		public int Flags { get; set; }
-		[MTParameter(Order = 1, FromFlag=0, FlagType= FlagType.True)]
+		[MTParameter(Order = 1, FlagBitId=0, FlagType= FlagType.True)]
 		public bool EditMessage { get; set; }
-		[MTParameter(Order = 2, FromFlag=1, FlagType= FlagType.True)]
+		[MTParameter(Order = 2, FlagBitId=1, FlagType= FlagType.True)]
 		public bool Force { get; set; }
 		[MTParameter(Order = 3)]
 		public MTSharp.Schema.TL.TLInputBotInlineMessageID Id { get; set; }

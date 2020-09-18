@@ -1,5 +1,14 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using MTSharp;
 using MTSharp.Attributes;
 using MTSharp.Enums;
+using MTSharp.Schema;
+using MTSharp.Schema.TL;
 
 namespace MTSharp.Schema.TL.Requests.Account
 {
@@ -14,22 +23,22 @@ namespace MTSharp.Schema.TL.Requests.Account
             }
         }
 
-        [MTParameter(Order = 0)]
-        public int Flags { get; set; }
-        [MTParameter(Order = 1, FromFlag = 0, FlagType = FlagType.True)]
-        public bool Contacts { get; set; }
-        [MTParameter(Order = 2, FromFlag = 1, FlagType = FlagType.True)]
-        public bool MessageUsers { get; set; }
-        [MTParameter(Order = 3, FromFlag = 2, FlagType = FlagType.True)]
-        public bool MessageChats { get; set; }
-        [MTParameter(Order = 4, FromFlag = 3, FlagType = FlagType.True)]
-        public bool MessageMegagroups { get; set; }
-        [MTParameter(Order = 5, FromFlag = 4, FlagType = FlagType.True)]
-        public bool MessageChannels { get; set; }
-        [MTParameter(Order = 6, FromFlag = 5, FlagType = FlagType.True)]
-        public bool Files { get; set; }
-        [MTParameter(Order = 7, FromFlag = 5, FlagType = FlagType.Null)]
-        public int? FileMaxSize { get; set; }
+		[MTParameter(Order = 0, IsFlag = true)]
+		public int Flags { get; set; }
+		[MTParameter(Order = 1, FlagBitId=0, FlagType= FlagType.True)]
+		public bool Contacts { get; set; }
+		[MTParameter(Order = 2, FlagBitId=1, FlagType= FlagType.True)]
+		public bool MessageUsers { get; set; }
+		[MTParameter(Order = 3, FlagBitId=2, FlagType= FlagType.True)]
+		public bool MessageChats { get; set; }
+		[MTParameter(Order = 4, FlagBitId=3, FlagType= FlagType.True)]
+		public bool MessageMegagroups { get; set; }
+		[MTParameter(Order = 5, FlagBitId=4, FlagType= FlagType.True)]
+		public bool MessageChannels { get; set; }
+		[MTParameter(Order = 6, FlagBitId=5, FlagType= FlagType.True)]
+		public bool Files { get; set; }
+		[MTParameter(Order = 7, FlagBitId=5, FlagType= FlagType.Null)]
+		public int? FileMaxSize { get; set; }
 
 
     }

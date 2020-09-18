@@ -14,7 +14,7 @@ namespace MTSharp.Schema.MT.Requests
             }
         }
 
-        [MTParameter(Order = 0, BytesCount = 16)]
+        [MTParameter(Order = 0, BigIntegerBytesCount = 16)]
         public BigInteger Nonce { get; set; }
 
 

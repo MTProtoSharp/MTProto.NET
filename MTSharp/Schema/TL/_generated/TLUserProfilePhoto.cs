@@ -1,26 +1,40 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using MTSharp;
 using MTSharp.Attributes;
+using MTSharp.Enums;
+using MTSharp.Schema;
+using MTSharp.Schema.TL;
 
 namespace MTSharp.Schema.TL
 {
-    [MTObject(0xecd75d8c)]
+    [MTObject(0x69d3ab26)]
     public class TLUserProfilePhoto : TLAbsUserProfilePhoto
     {
         public override uint Constructor
         {
             get
             {
-                return 0xecd75d8c;
+                return 0x69d3ab26;
             }
         }
 
-        [MTParameter(Order = 0)]
-        public long PhotoId { get; set; }
-        [MTParameter(Order = 1)]
-        public MTSharp.Schema.TL.TLFileLocationToBeDeprecated PhotoSmall { get; set; }
-        [MTParameter(Order = 2)]
-        public MTSharp.Schema.TL.TLFileLocationToBeDeprecated PhotoBig { get; set; }
-        [MTParameter(Order = 3)]
-        public int DcId { get; set; }
+		[MTParameter(Order = 0, IsFlag = true)]
+		public int Flags { get; set; }
+		[MTParameter(Order = 1, FlagBitId=0, FlagType= FlagType.True)]
+		public bool HasVideo { get; set; }
+		[MTParameter(Order = 2)]
+		public long PhotoId { get; set; }
+		[MTParameter(Order = 3)]
+		public MTSharp.Schema.TL.TLFileLocationToBeDeprecated PhotoSmall { get; set; }
+		[MTParameter(Order = 4)]
+		public MTSharp.Schema.TL.TLFileLocationToBeDeprecated PhotoBig { get; set; }
+		[MTParameter(Order = 5)]
+		public int DcId { get; set; }
 
 
     }

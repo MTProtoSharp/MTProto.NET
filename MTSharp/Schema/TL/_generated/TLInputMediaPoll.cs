@@ -1,20 +1,38 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using MTSharp;
 using MTSharp.Attributes;
+using MTSharp.Enums;
+using MTSharp.Schema;
+using MTSharp.Schema.TL;
 
 namespace MTSharp.Schema.TL
 {
-    [MTObject(0x6b3765b)]
+    [MTObject(0xf94e5f1)]
     public class TLInputMediaPoll : TLAbsInputMedia
     {
         public override uint Constructor
         {
             get
             {
-                return 0x6b3765b;
+                return 0xf94e5f1;
             }
         }
 
-        [MTParameter(Order = 0)]
-        public MTSharp.Schema.TL.TLPoll Poll { get; set; }
+		[MTParameter(Order = 0, IsFlag = true)]
+		public int Flags { get; set; }
+		[MTParameter(Order = 1)]
+		public MTSharp.Schema.TL.TLPoll Poll { get; set; }
+		[MTParameter(Order = 2, FlagBitId=0, FlagType= FlagType.Null)]
+		public TLVector<byte[]> CorrectAnswers { get; set; }
+		[MTParameter(Order = 3, FlagBitId=1, FlagType= FlagType.Null)]
+		public string Solution { get; set; }
+		[MTParameter(Order = 4, FlagBitId=1, FlagType= FlagType.Null)]
+		public TLVector<TLAbsMessageEntity> SolutionEntities { get; set; }
 
 
     }

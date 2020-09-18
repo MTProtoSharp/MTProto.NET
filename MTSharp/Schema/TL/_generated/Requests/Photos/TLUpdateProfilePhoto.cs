@@ -12,14 +12,14 @@ using MTSharp.Schema.TL;
 
 namespace MTSharp.Schema.TL.Requests.Photos
 {
-    [MTObject(0xf0bb5152)]
+    [MTObject(0x72d4742c)]
     public class TLUpdateProfilePhoto : MTObject
     {
         public override uint Constructor
         {
             get
             {
-                return 0xf0bb5152;
+                return 0x72d4742c;
             }
         }
 

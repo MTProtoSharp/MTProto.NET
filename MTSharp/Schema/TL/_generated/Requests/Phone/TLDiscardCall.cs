@@ -23,9 +23,9 @@ namespace MTSharp.Schema.TL.Requests.Phone
             }
         }
 
-		[MTParameter(Order = 0)]
+		[MTParameter(Order = 0, IsFlag = true)]
 		public int Flags { get; set; }
-		[MTParameter(Order = 1, FromFlag=0, FlagType= FlagType.True)]
+		[MTParameter(Order = 1, FlagBitId=0, FlagType= FlagType.True)]
 		public bool Video { get; set; }
 		[MTParameter(Order = 2)]
 		public MTSharp.Schema.TL.TLInputPhoneCall Peer { get; set; }

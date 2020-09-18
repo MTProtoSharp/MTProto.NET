@@ -1,5 +1,14 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using MTSharp;
 using MTSharp.Attributes;
 using MTSharp.Enums;
+using MTSharp.Schema;
+using MTSharp.Schema.TL;
 
 namespace MTSharp.Schema.TL
 {
@@ -14,28 +23,28 @@ namespace MTSharp.Schema.TL
             }
         }
 
-        [MTParameter(Order = 0)]
-        public int Flags { get; set; }
-        [MTParameter(Order = 1, FromFlag = 0, FlagType = FlagType.True)]
-        public bool Test { get; set; }
-        [MTParameter(Order = 2, FromFlag = 1, FlagType = FlagType.True)]
-        public bool NameRequested { get; set; }
-        [MTParameter(Order = 3, FromFlag = 2, FlagType = FlagType.True)]
-        public bool PhoneRequested { get; set; }
-        [MTParameter(Order = 4, FromFlag = 3, FlagType = FlagType.True)]
-        public bool EmailRequested { get; set; }
-        [MTParameter(Order = 5, FromFlag = 4, FlagType = FlagType.True)]
-        public bool ShippingAddressRequested { get; set; }
-        [MTParameter(Order = 6, FromFlag = 5, FlagType = FlagType.True)]
-        public bool Flexible { get; set; }
-        [MTParameter(Order = 7, FromFlag = 6, FlagType = FlagType.True)]
-        public bool PhoneToProvider { get; set; }
-        [MTParameter(Order = 8, FromFlag = 7, FlagType = FlagType.True)]
-        public bool EmailToProvider { get; set; }
-        [MTParameter(Order = 9)]
-        public string Currency { get; set; }
-        [MTParameter(Order = 10)]
-        public TLVector<MTSharp.Schema.TL.TLLabeledPrice> Prices { get; set; }
+		[MTParameter(Order = 0, IsFlag = true)]
+		public int Flags { get; set; }
+		[MTParameter(Order = 1, FlagBitId=0, FlagType= FlagType.True)]
+		public bool Test { get; set; }
+		[MTParameter(Order = 2, FlagBitId=1, FlagType= FlagType.True)]
+		public bool NameRequested { get; set; }
+		[MTParameter(Order = 3, FlagBitId=2, FlagType= FlagType.True)]
+		public bool PhoneRequested { get; set; }
+		[MTParameter(Order = 4, FlagBitId=3, FlagType= FlagType.True)]
+		public bool EmailRequested { get; set; }
+		[MTParameter(Order = 5, FlagBitId=4, FlagType= FlagType.True)]
+		public bool ShippingAddressRequested { get; set; }
+		[MTParameter(Order = 6, FlagBitId=5, FlagType= FlagType.True)]
+		public bool Flexible { get; set; }
+		[MTParameter(Order = 7, FlagBitId=6, FlagType= FlagType.True)]
+		public bool PhoneToProvider { get; set; }
+		[MTParameter(Order = 8, FlagBitId=7, FlagType= FlagType.True)]
+		public bool EmailToProvider { get; set; }
+		[MTParameter(Order = 9)]
+		public string Currency { get; set; }
+		[MTParameter(Order = 10)]
+		public TLVector<MTSharp.Schema.TL.TLLabeledPrice> Prices { get; set; }
 
 
     }

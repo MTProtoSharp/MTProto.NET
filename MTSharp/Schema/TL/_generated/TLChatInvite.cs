@@ -1,5 +1,14 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using MTSharp;
 using MTSharp.Attributes;
 using MTSharp.Enums;
+using MTSharp.Schema;
+using MTSharp.Schema.TL;
 
 namespace MTSharp.Schema.TL
 {
@@ -14,24 +23,24 @@ namespace MTSharp.Schema.TL
             }
         }
 
-        [MTParameter(Order = 0)]
-        public int Flags { get; set; }
-        [MTParameter(Order = 1, FromFlag = 0, FlagType = FlagType.True)]
-        public bool Channel { get; set; }
-        [MTParameter(Order = 2, FromFlag = 1, FlagType = FlagType.True)]
-        public bool Broadcast { get; set; }
-        [MTParameter(Order = 3, FromFlag = 2, FlagType = FlagType.True)]
-        public bool Public { get; set; }
-        [MTParameter(Order = 4, FromFlag = 3, FlagType = FlagType.True)]
-        public bool Megagroup { get; set; }
-        [MTParameter(Order = 5)]
-        public string Title { get; set; }
-        [MTParameter(Order = 6)]
-        public TLAbsPhoto Photo { get; set; }
-        [MTParameter(Order = 7)]
-        public int ParticipantsCount { get; set; }
-        [MTParameter(Order = 8, FromFlag = 4, FlagType = FlagType.Null)]
-        public TLVector<TLAbsUser> Participants { get; set; }
+		[MTParameter(Order = 0, IsFlag = true)]
+		public int Flags { get; set; }
+		[MTParameter(Order = 1, FlagBitId=0, FlagType= FlagType.True)]
+		public bool Channel { get; set; }
+		[MTParameter(Order = 2, FlagBitId=1, FlagType= FlagType.True)]
+		public bool Broadcast { get; set; }
+		[MTParameter(Order = 3, FlagBitId=2, FlagType= FlagType.True)]
+		public bool Public { get; set; }
+		[MTParameter(Order = 4, FlagBitId=3, FlagType= FlagType.True)]
+		public bool Megagroup { get; set; }
+		[MTParameter(Order = 5)]
+		public string Title { get; set; }
+		[MTParameter(Order = 6)]
+		public TLAbsPhoto Photo { get; set; }
+		[MTParameter(Order = 7)]
+		public int ParticipantsCount { get; set; }
+		[MTParameter(Order = 8, FlagBitId=4, FlagType= FlagType.Null)]
+		public TLVector<TLAbsUser> Participants { get; set; }
 
 
     }

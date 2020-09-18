@@ -23,17 +23,17 @@ namespace MTSharp.Schema.TL.Requests.Messages
             }
         }
 
-		[MTParameter(Order = 0)]
+		[MTParameter(Order = 0, IsFlag = true)]
 		public int Flags { get; set; }
-		[MTParameter(Order = 1, FromFlag=1, FlagType= FlagType.True)]
+		[MTParameter(Order = 1, FlagBitId=1, FlagType= FlagType.True)]
 		public bool NoWebpage { get; set; }
-		[MTParameter(Order = 2, FromFlag=0, FlagType= FlagType.Null)]
+		[MTParameter(Order = 2, FlagBitId=0, FlagType= FlagType.Null)]
 		public int? ReplyToMsgId { get; set; }
 		[MTParameter(Order = 3)]
 		public TLAbsInputPeer Peer { get; set; }
 		[MTParameter(Order = 4)]
 		public string Message { get; set; }
-		[MTParameter(Order = 5, FromFlag=3, FlagType= FlagType.Null)]
+		[MTParameter(Order = 5, FlagBitId=3, FlagType= FlagType.Null)]
 		public TLVector<TLAbsMessageEntity> Entities { get; set; }
 
 

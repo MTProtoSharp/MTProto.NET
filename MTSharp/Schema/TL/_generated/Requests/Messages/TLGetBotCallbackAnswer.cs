@@ -23,15 +23,15 @@ namespace MTSharp.Schema.TL.Requests.Messages
             }
         }
 
-		[MTParameter(Order = 0)]
+		[MTParameter(Order = 0, IsFlag = true)]
 		public int Flags { get; set; }
-		[MTParameter(Order = 1, FromFlag=1, FlagType= FlagType.True)]
+		[MTParameter(Order = 1, FlagBitId=1, FlagType= FlagType.True)]
 		public bool Game { get; set; }
 		[MTParameter(Order = 2)]
 		public TLAbsInputPeer Peer { get; set; }
 		[MTParameter(Order = 3)]
 		public int MsgId { get; set; }
-		[MTParameter(Order = 4, FromFlag=0, FlagType= FlagType.Null)]
+		[MTParameter(Order = 4, FlagBitId=0, FlagType= FlagType.Null)]
 		public byte[] Data { get; set; }
 
 

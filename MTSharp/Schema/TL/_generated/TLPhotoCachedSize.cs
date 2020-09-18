@@ -1,4 +1,14 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using MTSharp;
 using MTSharp.Attributes;
+using MTSharp.Enums;
+using MTSharp.Schema;
+using MTSharp.Schema.TL;
 
 namespace MTSharp.Schema.TL
 {
@@ -13,16 +23,16 @@ namespace MTSharp.Schema.TL
             }
         }
 
-        [MTParameter(Order = 0)]
-        public string Type { get; set; }
-        [MTParameter(Order = 1)]
-        public MTSharp.Schema.TL.TLFileLocationToBeDeprecated Location { get; set; }
-        [MTParameter(Order = 2)]
-        public int W { get; set; }
-        [MTParameter(Order = 3)]
-        public int H { get; set; }
-        [MTParameter(Order = 4)]
-        public byte[] Bytes { get; set; }
+		[MTParameter(Order = 0)]
+		public string Type { get; set; }
+		[MTParameter(Order = 1)]
+		public MTSharp.Schema.TL.TLFileLocationToBeDeprecated Location { get; set; }
+		[MTParameter(Order = 2)]
+		public int W { get; set; }
+		[MTParameter(Order = 3)]
+		public int H { get; set; }
+		[MTParameter(Order = 4)]
+		public byte[] Bytes { get; set; }
 
 
     }

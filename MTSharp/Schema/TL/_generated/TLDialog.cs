@@ -1,5 +1,14 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using MTSharp;
 using MTSharp.Attributes;
 using MTSharp.Enums;
+using MTSharp.Schema;
+using MTSharp.Schema.TL;
 
 namespace MTSharp.Schema.TL
 {
@@ -14,32 +23,32 @@ namespace MTSharp.Schema.TL
             }
         }
 
-        [MTParameter(Order = 0)]
-        public int Flags { get; set; }
-        [MTParameter(Order = 1, FromFlag = 2, FlagType = FlagType.True)]
-        public bool Pinned { get; set; }
-        [MTParameter(Order = 2, FromFlag = 3, FlagType = FlagType.True)]
-        public bool UnreadMark { get; set; }
-        [MTParameter(Order = 3)]
-        public TLAbsPeer Peer { get; set; }
-        [MTParameter(Order = 4)]
-        public int TopMessage { get; set; }
-        [MTParameter(Order = 5)]
-        public int ReadInboxMaxId { get; set; }
-        [MTParameter(Order = 6)]
-        public int ReadOutboxMaxId { get; set; }
-        [MTParameter(Order = 7)]
-        public int UnreadCount { get; set; }
-        [MTParameter(Order = 8)]
-        public int UnreadMentionsCount { get; set; }
-        [MTParameter(Order = 9)]
-        public MTSharp.Schema.TL.TLPeerNotifySettings NotifySettings { get; set; }
-        [MTParameter(Order = 10, FromFlag = 0, FlagType = FlagType.Null)]
-        public int? Pts { get; set; }
-        [MTParameter(Order = 11, FromFlag = 1, FlagType = FlagType.Null)]
-        public TLAbsDraftMessage Draft { get; set; }
-        [MTParameter(Order = 12, FromFlag = 4, FlagType = FlagType.Null)]
-        public int? FolderId { get; set; }
+		[MTParameter(Order = 0, IsFlag = true)]
+		public int Flags { get; set; }
+		[MTParameter(Order = 1, FlagBitId=2, FlagType= FlagType.True)]
+		public bool Pinned { get; set; }
+		[MTParameter(Order = 2, FlagBitId=3, FlagType= FlagType.True)]
+		public bool UnreadMark { get; set; }
+		[MTParameter(Order = 3)]
+		public TLAbsPeer Peer { get; set; }
+		[MTParameter(Order = 4)]
+		public int TopMessage { get; set; }
+		[MTParameter(Order = 5)]
+		public int ReadInboxMaxId { get; set; }
+		[MTParameter(Order = 6)]
+		public int ReadOutboxMaxId { get; set; }
+		[MTParameter(Order = 7)]
+		public int UnreadCount { get; set; }
+		[MTParameter(Order = 8)]
+		public int UnreadMentionsCount { get; set; }
+		[MTParameter(Order = 9)]
+		public MTSharp.Schema.TL.TLPeerNotifySettings NotifySettings { get; set; }
+		[MTParameter(Order = 10, FlagBitId=0, FlagType= FlagType.Null)]
+		public int? Pts { get; set; }
+		[MTParameter(Order = 11, FlagBitId=1, FlagType= FlagType.Null)]
+		public TLAbsDraftMessage Draft { get; set; }
+		[MTParameter(Order = 12, FlagBitId=4, FlagType= FlagType.Null)]
+		public int? FolderId { get; set; }
 
 
     }

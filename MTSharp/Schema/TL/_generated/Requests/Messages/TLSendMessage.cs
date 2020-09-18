@@ -23,29 +23,29 @@ namespace MTSharp.Schema.TL.Requests.Messages
             }
         }
 
-		[MTParameter(Order = 0)]
+		[MTParameter(Order = 0, IsFlag = true)]
 		public int Flags { get; set; }
-		[MTParameter(Order = 1, FromFlag=1, FlagType= FlagType.True)]
+		[MTParameter(Order = 1, FlagBitId=1, FlagType= FlagType.True)]
 		public bool NoWebpage { get; set; }
-		[MTParameter(Order = 2, FromFlag=5, FlagType= FlagType.True)]
+		[MTParameter(Order = 2, FlagBitId=5, FlagType= FlagType.True)]
 		public bool Silent { get; set; }
-		[MTParameter(Order = 3, FromFlag=6, FlagType= FlagType.True)]
+		[MTParameter(Order = 3, FlagBitId=6, FlagType= FlagType.True)]
 		public bool Background { get; set; }
-		[MTParameter(Order = 4, FromFlag=7, FlagType= FlagType.True)]
+		[MTParameter(Order = 4, FlagBitId=7, FlagType= FlagType.True)]
 		public bool ClearDraft { get; set; }
 		[MTParameter(Order = 5)]
 		public TLAbsInputPeer Peer { get; set; }
-		[MTParameter(Order = 6, FromFlag=0, FlagType= FlagType.Null)]
+		[MTParameter(Order = 6, FlagBitId=0, FlagType= FlagType.Null)]
 		public int? ReplyToMsgId { get; set; }
 		[MTParameter(Order = 7)]
 		public string Message { get; set; }
 		[MTParameter(Order = 8)]
 		public long RandomId { get; set; }
-		[MTParameter(Order = 9, FromFlag=2, FlagType= FlagType.Null)]
+		[MTParameter(Order = 9, FlagBitId=2, FlagType= FlagType.Null)]
 		public TLAbsReplyMarkup ReplyMarkup { get; set; }
-		[MTParameter(Order = 10, FromFlag=3, FlagType= FlagType.Null)]
+		[MTParameter(Order = 10, FlagBitId=3, FlagType= FlagType.Null)]
 		public TLVector<TLAbsMessageEntity> Entities { get; set; }
-		[MTParameter(Order = 11, FromFlag=10, FlagType= FlagType.Null)]
+		[MTParameter(Order = 11, FlagBitId=10, FlagType= FlagType.Null)]
 		public int? ScheduleDate { get; set; }
 
 

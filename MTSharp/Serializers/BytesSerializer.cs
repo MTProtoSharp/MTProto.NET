@@ -5,12 +5,12 @@ using System.Text;
 
 namespace MTSharp.Serializers
 {
-    public class BytesSerializer
+    public class BytesSerializer : ISerializer<byte[]>
     {
-        public static byte[] Deserialize(BinaryReader reader)
+        public static byte[] Deserialize(BinaryReader reader) 
         {
             byte lengthByte = reader.ReadByte();
-            int length = -1;
+            int length = -1, padding = -1;
 
             //If Length >= 254, the serialization contains byte 254
             if (lengthByte == 254)
@@ -20,13 +20,23 @@ namespace MTSharp.Serializers
                     reader.ReadByte() |
                     (reader.ReadByte() << 8) |
                     (reader.ReadByte() << 16);
+
+                padding = length % 4;
             }
             else // If L <= 253, the serialization contains one byte with the value of L
             {
                 length = lengthByte;
+                padding = (length + 1) % 4;
             }
 
             byte[] data = reader.ReadBytes(length);
+
+            if (padding > 0)
+            {
+                padding = 4 - padding;
+                reader.ReadBytes(padding);
+            }
+            
 
             return data;
         }

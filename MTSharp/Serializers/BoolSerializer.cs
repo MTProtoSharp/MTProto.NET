@@ -5,7 +5,7 @@ using System.Text;
 
 namespace MTSharp.Serializers
 {
-    public class BoolSerializer
+    public class BoolSerializer : ISerializer<bool>
     {
 
         private const uint FALSE_CONSTRUCTOR = 0xbc799737;

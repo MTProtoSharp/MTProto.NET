@@ -23,11 +23,11 @@ namespace MTSharp.Schema.TL.Requests.Messages
             }
         }
 
-		[MTParameter(Order = 0)]
+		[MTParameter(Order = 0, IsFlag = true)]
 		public int Flags { get; set; }
 		[MTParameter(Order = 1)]
 		public string Message { get; set; }
-		[MTParameter(Order = 2, FromFlag=3, FlagType= FlagType.Null)]
+		[MTParameter(Order = 2, FlagBitId=3, FlagType= FlagType.Null)]
 		public TLVector<TLAbsMessageEntity> Entities { get; set; }
 
 

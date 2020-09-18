@@ -20,11 +20,11 @@ namespace MTSharp.Schema.MT
         public byte[] P { get; set; }
         [MTParameter(Order = 2)]
         public byte[] Q { get; set; }
-        [MTParameter(Order = 3, BytesCount = 16)]
+        [MTParameter(Order = 3, BigIntegerBytesCount = 16)]
         public BigInteger Nonce { get; set; }
-        [MTParameter(Order = 4, BytesCount = 16)]
+        [MTParameter(Order = 4, BigIntegerBytesCount = 16)]
         public BigInteger ServerNonce { get; set; }
-        [MTParameter(Order = 5, BytesCount = 32)]
+        [MTParameter(Order = 5, BigIntegerBytesCount = 32)]
         public BigInteger NewNonce { get; set; }
 
 

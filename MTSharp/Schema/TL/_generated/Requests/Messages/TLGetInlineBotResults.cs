@@ -23,13 +23,13 @@ namespace MTSharp.Schema.TL.Requests.Messages
             }
         }
 
-		[MTParameter(Order = 0)]
+		[MTParameter(Order = 0, IsFlag = true)]
 		public int Flags { get; set; }
 		[MTParameter(Order = 1)]
 		public TLAbsInputUser Bot { get; set; }
 		[MTParameter(Order = 2)]
 		public TLAbsInputPeer Peer { get; set; }
-		[MTParameter(Order = 3, FromFlag=0, FlagType= FlagType.Null)]
+		[MTParameter(Order = 3, FlagBitId=0, FlagType= FlagType.Null)]
 		public TLAbsInputGeoPoint GeoPoint { get; set; }
 		[MTParameter(Order = 4)]
 		public string Query { get; set; }

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace MTSharp.Serializers
 {
-    public class StringSerializer
+    public class StringSerializer : ISerializer<string>
     {
         public static string Deserialize(BinaryReader reader)
         {

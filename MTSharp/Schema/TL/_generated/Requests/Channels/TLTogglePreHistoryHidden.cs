@@ -23,10 +23,10 @@ namespace MTSharp.Schema.TL.Requests.Channels
             }
         }
 
-        [MTParameter(Order = 0)]
-        public TLAbsInputChannel Channel { get; set; }
-        [MTParameter(Order = 1)]
-        public bool Enabled { get; set; }
+		[MTParameter(Order = 0)]
+		public TLAbsInputChannel Channel { get; set; }
+		[MTParameter(Order = 1)]
+		public bool Enabled { get; set; }
 
 
     }
