@@ -1,12 +1,8 @@
-﻿using MTSharp.Schema.TL;
-using Org.BouncyCastle.Math.EC.Rfc7748;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Net;
 using System.Reflection;
-using System.Text;
 
 namespace MTSharp.Serializers
 {
@@ -26,9 +22,9 @@ namespace MTSharp.Serializers
 
         public static object Deserialize(byte[] data, Type type = null, object arg1 = null)
         {
-            using (MemoryStream memoryStream = new MemoryStream(data))
-            using (BinaryReader reader = new BinaryReader(memoryStream))
-                return Deserialize(reader, type, arg1);
+            using MemoryStream memoryStream = new MemoryStream(data);
+            using BinaryReader reader = new BinaryReader(memoryStream);
+            return Deserialize(reader, type, arg1);
         }
         public static object Deserialize(BinaryReader reader, Type type = null, object arg1 = null)
         {
@@ -55,12 +51,10 @@ namespace MTSharp.Serializers
 
         public static byte[] Serialize(object value)
         {
-            using (MemoryStream memoryStream = new MemoryStream())
-            using (BinaryWriter writer = new BinaryWriter(memoryStream))
-            {
-                Serialize(writer, value);
-                return memoryStream.ToArray();
-            }
+            using MemoryStream memoryStream = new MemoryStream();
+            using BinaryWriter writer = new BinaryWriter(memoryStream);
+            Serialize(writer, value);
+            return memoryStream.ToArray();
         }
 
         public static void Serialize(BinaryWriter writer, object value)

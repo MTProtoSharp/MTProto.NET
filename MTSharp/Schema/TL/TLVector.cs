@@ -1,9 +1,6 @@
 ﻿using MTSharp.Attributes;
-using MTSharp.Serializers;
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.IO;
 
 namespace MTSharp.Schema.TL
 {

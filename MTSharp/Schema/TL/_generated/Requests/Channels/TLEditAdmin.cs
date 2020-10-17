@@ -1,14 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MTSharp;
 using MTSharp.Attributes;
-using MTSharp.Enums;
-using MTSharp.Schema;
-using MTSharp.Schema.TL;
 
 namespace MTSharp.Schema.TL.Requests.Channels
 {
@@ -23,14 +13,14 @@ namespace MTSharp.Schema.TL.Requests.Channels
             }
         }
 
-		[MTParameter(Order = 0)]
-		public TLAbsInputChannel Channel { get; set; }
-		[MTParameter(Order = 1)]
-		public TLAbsInputUser UserId { get; set; }
-		[MTParameter(Order = 2)]
-		public MTSharp.Schema.TL.TLChatAdminRights AdminRights { get; set; }
-		[MTParameter(Order = 3)]
-		public string Rank { get; set; }
+        [MTParameter(Order = 0)]
+        public TLAbsInputChannel Channel { get; set; }
+        [MTParameter(Order = 1)]
+        public TLAbsInputUser UserId { get; set; }
+        [MTParameter(Order = 2)]
+        public MTSharp.Schema.TL.TLChatAdminRights AdminRights { get; set; }
+        [MTParameter(Order = 3)]
+        public string Rank { get; set; }
 
 
     }

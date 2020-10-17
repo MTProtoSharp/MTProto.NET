@@ -1,14 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MTSharp;
 using MTSharp.Attributes;
-using MTSharp.Enums;
-using MTSharp.Schema;
-using MTSharp.Schema.TL;
 
 namespace MTSharp.Schema.TL.Account
 {
@@ -23,12 +13,12 @@ namespace MTSharp.Schema.TL.Account
             }
         }
 
-		[MTParameter(Order = 0)]
-		public MTSharp.Schema.TL.TLAutoDownloadSettings Low { get; set; }
-		[MTParameter(Order = 1)]
-		public MTSharp.Schema.TL.TLAutoDownloadSettings Medium { get; set; }
-		[MTParameter(Order = 2)]
-		public MTSharp.Schema.TL.TLAutoDownloadSettings High { get; set; }
+        [MTParameter(Order = 0)]
+        public MTSharp.Schema.TL.TLAutoDownloadSettings Low { get; set; }
+        [MTParameter(Order = 1)]
+        public MTSharp.Schema.TL.TLAutoDownloadSettings Medium { get; set; }
+        [MTParameter(Order = 2)]
+        public MTSharp.Schema.TL.TLAutoDownloadSettings High { get; set; }
 
 
     }

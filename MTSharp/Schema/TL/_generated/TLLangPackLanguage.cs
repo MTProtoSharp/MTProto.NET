@@ -1,14 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MTSharp;
 using MTSharp.Attributes;
 using MTSharp.Enums;
-using MTSharp.Schema;
-using MTSharp.Schema.TL;
 
 namespace MTSharp.Schema.TL
 {
@@ -23,30 +14,30 @@ namespace MTSharp.Schema.TL
             }
         }
 
-		[MTParameter(Order = 0, IsFlag = true)]
-		public int Flags { get; set; }
-		[MTParameter(Order = 1, FlagBitId=0, FlagType= FlagType.True)]
-		public bool Official { get; set; }
-		[MTParameter(Order = 2, FlagBitId=2, FlagType= FlagType.True)]
-		public bool Rtl { get; set; }
-		[MTParameter(Order = 3, FlagBitId=3, FlagType= FlagType.True)]
-		public bool Beta { get; set; }
-		[MTParameter(Order = 4)]
-		public string Name { get; set; }
-		[MTParameter(Order = 5)]
-		public string NativeName { get; set; }
-		[MTParameter(Order = 6)]
-		public string LangCode { get; set; }
-		[MTParameter(Order = 7, FlagBitId=1, FlagType= FlagType.Null)]
-		public string BaseLangCode { get; set; }
-		[MTParameter(Order = 8)]
-		public string PluralCode { get; set; }
-		[MTParameter(Order = 9)]
-		public int StringsCount { get; set; }
-		[MTParameter(Order = 10)]
-		public int TranslatedCount { get; set; }
-		[MTParameter(Order = 11)]
-		public string TranslationsUrl { get; set; }
+        [MTParameter(Order = 0, IsFlag = true)]
+        public int Flags { get; set; }
+        [MTParameter(Order = 1, FlagBitId = 0, FlagType = FlagType.True)]
+        public bool Official { get; set; }
+        [MTParameter(Order = 2, FlagBitId = 2, FlagType = FlagType.True)]
+        public bool Rtl { get; set; }
+        [MTParameter(Order = 3, FlagBitId = 3, FlagType = FlagType.True)]
+        public bool Beta { get; set; }
+        [MTParameter(Order = 4)]
+        public string Name { get; set; }
+        [MTParameter(Order = 5)]
+        public string NativeName { get; set; }
+        [MTParameter(Order = 6)]
+        public string LangCode { get; set; }
+        [MTParameter(Order = 7, FlagBitId = 1, FlagType = FlagType.Null)]
+        public string BaseLangCode { get; set; }
+        [MTParameter(Order = 8)]
+        public string PluralCode { get; set; }
+        [MTParameter(Order = 9)]
+        public int StringsCount { get; set; }
+        [MTParameter(Order = 10)]
+        public int TranslatedCount { get; set; }
+        [MTParameter(Order = 11)]
+        public string TranslationsUrl { get; set; }
 
 
     }

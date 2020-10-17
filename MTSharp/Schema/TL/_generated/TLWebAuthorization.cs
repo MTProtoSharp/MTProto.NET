@@ -1,14 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MTSharp;
 using MTSharp.Attributes;
-using MTSharp.Enums;
-using MTSharp.Schema;
-using MTSharp.Schema.TL;
 
 namespace MTSharp.Schema.TL
 {
@@ -23,24 +13,24 @@ namespace MTSharp.Schema.TL
             }
         }
 
-		[MTParameter(Order = 0)]
-		public long Hash { get; set; }
-		[MTParameter(Order = 1)]
-		public int BotId { get; set; }
-		[MTParameter(Order = 2)]
-		public string Domain { get; set; }
-		[MTParameter(Order = 3)]
-		public string Browser { get; set; }
-		[MTParameter(Order = 4)]
-		public string Platform { get; set; }
-		[MTParameter(Order = 5)]
-		public int DateCreated { get; set; }
-		[MTParameter(Order = 6)]
-		public int DateActive { get; set; }
-		[MTParameter(Order = 7)]
-		public string Ip { get; set; }
-		[MTParameter(Order = 8)]
-		public string Region { get; set; }
+        [MTParameter(Order = 0)]
+        public long Hash { get; set; }
+        [MTParameter(Order = 1)]
+        public int BotId { get; set; }
+        [MTParameter(Order = 2)]
+        public string Domain { get; set; }
+        [MTParameter(Order = 3)]
+        public string Browser { get; set; }
+        [MTParameter(Order = 4)]
+        public string Platform { get; set; }
+        [MTParameter(Order = 5)]
+        public int DateCreated { get; set; }
+        [MTParameter(Order = 6)]
+        public int DateActive { get; set; }
+        [MTParameter(Order = 7)]
+        public string Ip { get; set; }
+        [MTParameter(Order = 8)]
+        public string Region { get; set; }
 
 
     }

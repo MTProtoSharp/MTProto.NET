@@ -1,14 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MTSharp;
 using MTSharp.Attributes;
-using MTSharp.Enums;
-using MTSharp.Schema;
-using MTSharp.Schema.TL;
 
 namespace MTSharp.Schema.TL.Help
 {
@@ -23,14 +13,14 @@ namespace MTSharp.Schema.TL.Help
             }
         }
 
-		[MTParameter(Order = 0)]
-		public string Message { get; set; }
-		[MTParameter(Order = 1)]
-		public TLVector<TLAbsMessageEntity> Entities { get; set; }
-		[MTParameter(Order = 2)]
-		public string Author { get; set; }
-		[MTParameter(Order = 3)]
-		public int Date { get; set; }
+        [MTParameter(Order = 0)]
+        public string Message { get; set; }
+        [MTParameter(Order = 1)]
+        public TLVector<TLAbsMessageEntity> Entities { get; set; }
+        [MTParameter(Order = 2)]
+        public string Author { get; set; }
+        [MTParameter(Order = 3)]
+        public int Date { get; set; }
 
 
     }
