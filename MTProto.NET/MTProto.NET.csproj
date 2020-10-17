@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+	<LangVersion>preview</LangVersion>
+	<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	<Authors>Afshin Arani</Authors>
+	<Company />
+	<PackageLicenseFile>COPYING</PackageLicenseFile>
+	<RepositoryUrl>https://github.com/MTProtoSharp/MTProto.NET</RepositoryUrl>
+	<PackageProjectUrl>https://github.com/MTProtoSharp/MTProto.NET</PackageProjectUrl>
+	<Copyright></Copyright>
+	<Description>Unofficial MTProto Protocol Implementation for C#.</Description>
+	<PackageId>MTProto.NET</PackageId>
+	<Product>MTProto.NET</Product>
+	<AssemblyName>MTProto.NET</AssemblyName>
+	<RootNamespace>MTProto.NET</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="TLObjectUtils.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Schema\MT\" />
+    <Folder Include="Schema\TL\_generated\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Portable.BouncyCastle" Version="1.8.6.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\COPYING">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
