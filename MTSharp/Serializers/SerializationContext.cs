@@ -22,26 +22,12 @@ namespace MTSharp.Serializers
 
         public static object Deserialize(byte[] data, Type type = null)
         {
-            using MemoryStream memoryStream = new MemoryStream(data);
-            using BinaryReader reader = new BinaryReader(memoryStream);
-            return Deserialize(reader, type);
+            return Deserialize(data, type, null);
         }
 
         public static object Deserialize(BinaryReader reader, Type type = null)
         {
-            type ??= typeof(MTObject);
-
-            if (!type.IsGenericType)
-            {
-                var serializerType = Serializers[type];
-                return serializerType.InvokeMember("Deserialize", BindingFlags.Public | BindingFlags.Static | BindingFlags.InvokeMethod, null, null, new object[] { reader });
-            }
-            else
-            {
-                var serializerType = Serializers.First(x => x.Key.Name == type.GetGenericTypeDefinition().Name).Value;
-                serializerType = serializerType.MakeGenericType(type.GenericTypeArguments);
-                return serializerType.InvokeMember("Deserialize", BindingFlags.Public | BindingFlags.Static | BindingFlags.InvokeMethod, null, null, new object[] { reader });
-            }
+            return Deserialize(reader, type, null);
         }
 
         internal static object Deserialize(byte[] data, Type type = null, object arg1 = null)
@@ -70,7 +56,7 @@ namespace MTSharp.Serializers
                 return serializerType.InvokeMember("Deserialize", BindingFlags.Public | BindingFlags.Static | BindingFlags.InvokeMethod, null, null, new object[] { reader });
             }
         }
-       
+
         public static byte[] Serialize(object value)
         {
             using MemoryStream memoryStream = new MemoryStream();
