@@ -31,12 +31,9 @@ namespace MTSharp.Serializers
             var args = new List<object> { reader };
             if (arg1 != null) args.Add(arg1);
 
-            if (type == null)
-            {
-                var serializerType = Serializers[typeof(MTObject)];
-                return serializerType.InvokeMember("Deserialize", BindingFlags.Public | BindingFlags.Static | BindingFlags.InvokeMethod, null, null, args.ToArray());
-            }
-            else if (!type.IsGenericType)
+            type ??= typeof(MTObject);
+
+            if (!type.IsGenericType)
             {
                 var serializerType = Serializers[type];
                 return serializerType.InvokeMember("Deserialize", BindingFlags.Public | BindingFlags.Static | BindingFlags.InvokeMethod, null, null, args.ToArray());
